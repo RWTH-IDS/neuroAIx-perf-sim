@@ -1,0 +1,77 @@
+bio_constants
+Neurons	            =   77169
+Fire rate	        =   3.2
+Time resolution	    =   0.00010
+Synapses per Neuron =   3880
+
+hardware_settings
+System clock        =   92 MHz
+Neuron clock        =   189.393 MHz
+Pipeline depth      =   30
+Number of Cores     =   10
+DRAM fetch size     =   512
+Bytes per synapse   =   8
+Flitsize            =   128 bit
+
+network_size
+Network Height      =   5
+Network Width       =   7
+Network Depth       =   1
+Network 4Dim	    =   1
+
+latency
+Router              =   43
+CDC                 =   60
+Spike Dispatcher    =   880
+Transceiver         =   600
+Additional Hop Delay=   309
+Const Cable         =   17
+
+stages
+index               =   Router to Spike Dispatcher
+Task                =   Receiving Spikes
+Number of Channel   =   1
+Max. Data Rate      =   System clock Mspikes/s
+Data Size           =   1 spikes
+depend              =   Transmitting Spikes
+Added Latency       =   Additional Hop Delay, Transceiver, Const Cable
+Hardwareclass       =   Interconnect
+
+index               =   Interconnect
+Task                =   Transmitting Spikes
+Number of Channel   =   1
+Max. Data Rate      =   5.82 Gbit/s
+Data Size           =   Flitsize bit
+depend              =   Receiving Spikes
+Added Latency       =   Router
+Hardwareclass       =   Interconnect
+
+index               =   Router to DRAM
+Task                =   Requesting Lookup
+Number of Channel   =   1
+Max. Data Rate      =   System clock Mspikes/s
+Data Size           =   1 spikes
+depend              =   Receiving Spikes
+Added Latency       =   Router, CDC
+Hardwareclass       =   Memory
+
+index               =   DRAM to Spike Dispatcher
+Task                =   Write into RingBuffer
+Number of Channel   =   2
+Max. Data Rate      =   12.12 GB/s
+Data Size           =   bytes_per_synaptic_list Byte
+depend              =   Requesting Lookup
+Added Latency       =   Spike Dispatcher
+Hardwareclass       =   Memory
+
+colors
+Calculation         =   #859875
+Interconnect        =   #6D85AB
+Memory              =   #C87F7F
+Pipeline            =   #9ca282
+Router              =   #9ea6b4
+CDC                 =   #acb292
+Spike Dispatcher    =   #e0a5a2
+Additional Hop Delay=   #3C9BCB
+Transceiver         =   #C68169
+Const Cable         =   #D47688
