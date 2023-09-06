@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------
+# File Name : main.py
+# Author: Niklas Groß
+#
+# Creation Date : Aug 30, 2023
+#
+# Copyright (C) 2023 IDS, RWTH Aachen University
+# Licence : GPLv3
+#-----------------------------------------------------------------------------
 
 import gui_window
 import settings

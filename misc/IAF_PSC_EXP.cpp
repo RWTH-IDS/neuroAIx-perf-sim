@@ -1,3 +1,13 @@
+/*-----------------------------------------------------------------------------
+ File Name : IAF_PSC_EXP.cpp
+ Author: Tim Stadtmann
+
+ Creation Date : Aug 30, 2023
+
+ Copyright (C) 2023 IDS, RWTH Aachen University
+ Licence : GPLv3
+-----------------------------------------------------------------------------*/
+
 #include "IAF_PSC_EXP.h"
 
 void IAF_PSC_EXP(

@@ -1,3 +1,13 @@
+#-----------------------------------------------------------------------------
+# File Name : settings.py
+# Author: Niklas Groß
+#
+# Creation Date : Aug 30, 2023
+#
+# Copyright (C) 2023 IDS, RWTH Aachen University
+# Licence : GPLv3
+#-----------------------------------------------------------------------------
+
 import pandas as pd
 import numpy as np
 import math
