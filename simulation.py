@@ -415,7 +415,7 @@ class Simulation:
             for latency_element in current_latency_elements[::-1]:
                 if latency_element != '':
                     duration = settings.latency[latency_element]
-                    if latency_element == 'additional_hop_delay':
+                    if latency_element == 'Additional Hop Delay':
                         duration = sum([i-2 for i in list(settings.network_size_dict.values()) if i > 2]) * float(settings.latency[latency_element]) / (3+3)
                     start = current_end_point - duration
                     temp_df = pd.DataFrame({'Position': pos,
